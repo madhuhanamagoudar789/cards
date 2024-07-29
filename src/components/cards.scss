@@ -1,0 +1,43 @@
+.card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  position: relative;
+  border-radius: 10px;
+
+  .head {
+    padding-bottom: 10px;
+    color: #ffcc09;
+    font-size: 28px;
+    line-height: 1.21;
+    font-weight: bold;
+  }
+
+  .content {
+    padding-bottom: 10px;
+    font-size: 20px;
+    line-height: 1.29;
+    color: lightgray;
+  }
+
+  .link {
+    font-size: 14px;
+    line-height: 1.29;
+    left: 20px;
+    color: grey;
+    font-weight: bold;
+    &:hover {
+      color: #ffcc09;
+    }
+  }
+
+  .image {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    width: 200px;
+    height: 239px;
+    object-fit: contain;
+  }
+}
