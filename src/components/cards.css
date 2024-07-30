@@ -5,6 +5,7 @@
   background-color: #fff;
   position: relative;
   border-radius: 10px;
+  overflow: hidden;
 }
 .card .head {
   padding-bottom: 10px;
@@ -12,12 +13,14 @@
   font-size: 28px;
   line-height: 1.21;
   font-weight: bold;
+  grid-area: head;
 }
 .card .content {
   padding-bottom: 10px;
   font-size: 20px;
   line-height: 1.29;
   color: lightgray;
+  grid-area: content1;
 }
 .card .link {
   font-size: 14px;
@@ -25,16 +28,18 @@
   left: 20px;
   color: grey;
   font-weight: bold;
+  grid-area: link;
 }
 .card .link:hover {
   color: #ffcc09;
 }
 .card .image {
-  position: absolute;
   right: 10px;
   bottom: 10px;
   width: 200px;
   height: 239px;
   -o-object-fit: contain;
      object-fit: contain;
+  grid-area: image1;
+  justify-self: end;
 }/*# sourceMappingURL=cards.css.map */

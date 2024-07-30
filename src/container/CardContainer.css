@@ -4,44 +4,56 @@
   gap: 60px;
   background-color: lightgrey;
   box-sizing: border-box;
-  padding: 20px 60px 20px 60px;
+  padding: 20px 20px 20px 20px;
   align-items: center;
 }
 
-/* Style for individual cards */
 .card {
-  display: flex;
-  flex-direction: column;
   box-sizing: border-box;
   background-color: white;
   border: 1px solid #ccc;
   padding: 20px;
   height: 480px;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 20% 20% 10% 50%;
+  grid-template-areas: "head head" "content1 content1" "link ." " image1 image1";
 }
 
-/* Media query for screens smaller than 770px */
-@media screen and (max-width: 770px) and (min-width: 280px) {
+@media screen and (max-width: 770px) {
   .cardContainer {
     flex-direction: column;
     align-items: center;
+    gap: 10px;
   }
   .card {
     width: 100%;
-    margin-bottom: 20px;
-    min-height: 165px;
-    max-height: 165px;
+    height: 165px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    grid-template-areas: "head image1" "content1 image1" "link image1";
   }
   .card .head {
     font-size: 20px;
     line-height: 1.2;
+    grid-area: head;
   }
   .card .content {
     font-size: 14px;
     line-height: 1.29;
+    grid-area: content1;
+  }
+  .card .link {
+    grid-area: link;
   }
   .card .image {
     width: 120px;
     height: 120px;
+    -o-object-fit: contain;
+       object-fit: contain;
+    grid-area: image1;
+    justify-self: end;
   }
 }
 @media screen and (max-width: 1240px) and (min-width: 770px) {
@@ -55,23 +67,62 @@
     margin-bottom: 10px;
     min-height: 216px;
     max-height: 216px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 30px auto auto;
+    grid-template-areas: "head image1" "content1 image1" "link image1";
   }
   .card .head {
     font-size: 24px;
     line-height: 1.25;
+    grid-area: head;
   }
   .card .content {
     font-size: 16px;
     line-height: 1.38;
+    grid-area: content1;
+  }
+  .card .link {
+    grid-area: link;
   }
   .card .image {
     width: 200px;
     height: 212px;
+    grid-area: image1;
+    justify-self: end;
+    -o-object-fit: contain;
+       object-fit: contain;
   }
 }
 @media only screen and (max-width: 1280px) and (min-width: 1240px) {
+  .card {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 20% 20% 20% 40%;
+    grid-template-areas: "head head" "content1 content1" "link link" " image1 image1";
+  }
+  .card .head {
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+    grid-area: head;
+  }
+  .card .content {
+    block-size: contain;
+    grid-area: content1;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+  .card .link {
+    margin-left: 30px;
+    margin-right: 30px;
+    grid-area: link;
+  }
   .card .image {
     width: 190px;
     height: 182px;
+    grid-area: image1;
+    margin-left: auto;
+    justify-self: end;
   }
 }/*# sourceMappingURL=CardContainer.css.map */
